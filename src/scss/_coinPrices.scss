@@ -1,0 +1,470 @@
+#coin-prices {
+  padding: 5rem 1rem 5rem 1rem;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    justify-content: space-between;
+    align-items: center;
+    // calc styles
+    .calculator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      margin: auto;
+      height: 550px;
+      //   rectangle background
+      &::before {
+        z-index: -1;
+        content: "";
+        width: 100%;
+        height: 90%;
+        position: absolute;
+        // top: 20%;
+
+        background-image: url("../../src/images/bg-calc.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+      //   content calculator
+      .content {
+        box-shadow: 0px 29px 51px rgba(0, 0, 0, 0.13);
+        width: 419px;
+        // opacity: 0;
+        // height: 430px;
+        display: grid;
+        grid-template-rows: 1fr 6fr;
+        padding: 4rem 4rem;
+        height: 410px;
+        // width: 70%;
+        border-radius: 2rem;
+        background: $color-light;
+        margin-top: 4rem;
+        justify-content: center;
+        align-items: center;
+        .top {
+          width: 90%;
+          display: flex;
+          margin: auto;
+          justify-content: space-around;
+          gap: 1rem;
+          margin-bottom: 4rem;
+          a {
+            height: 51px;
+            width: 100%;
+            border-radius: 1rem;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "yekan bakh";
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 19px;
+            letter-spacing: 0em;
+            text-align: left;
+            transition: all 0.5s;
+            &.btn-light {
+              border: 1px solid $color-dark;
+            }
+            &:hover {
+              border: 1px solid $color-green;
+              color: $color-green !important;
+            }
+            i {
+              transform: rotate(90deg);
+              margin-right: 1rem;
+            }
+          }
+        }
+        .calc-form {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .input-group {
+            border-radius: 1rem;
+            padding: 1rem 2rem;
+            width: 100%;
+            margin: auto;
+            height: 100%;
+            border: 1px solid $color-gray;
+            display: grid;
+            grid-template-columns: 4fr 2fr !important;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem 0;
+            height: 68px;
+            // dolor price and select styles
+            &.change {
+              grid-template-columns: 4fr 2fr;
+              position: relative;
+              .select-options {
+                visibility: hidden;
+                display: flex;
+                flex-direction: column;
+                width: 110px;
+                top: 105%;
+                background: rgba($color: #ebebeb, $alpha: 1);
+                border-radius: 6px;
+                overflow: hidden;
+                position: absolute;
+                // z-index: 10;
+                li {
+                  display: flex;
+                  cursor: pointer;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 0.4rem 0.2rem;
+                  width: 100%;
+                  padding: 0.5rem;
+                  &:hover {
+                    background: $color-light;
+                  }
+                  img {
+                    width: 25px;
+                  }
+                }
+              }
+              .selector {
+                // width: 100%;
+                #selectField {
+                  z-index: 10;
+                  width: 100%;
+                  display: flex;
+                  align-items: center;
+                  flex-direction: row-reverse;
+                  justify-content: space-between;
+                  gap: 3px;
+                  padding: 0 1rem;
+                  cursor: pointer;
+                  p {
+                    display: grid;
+                  }
+                }
+              }
+            }
+
+            label {
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              background: transparent;
+              padding-right: 1rem;
+              height: 100%;
+              color: $color-darker;
+              font-family: "yekan bakh";
+              font-size: 12px;
+              font-weight: 500;
+              line-height: 14px;
+              letter-spacing: 0em;
+              text-align: center;
+            }
+           
+            input {
+              font-family: "yekan bakh";
+              font-size: 13px;
+              font-weight: 700;
+              line-height: 25px;
+              letter-spacing: 0em;
+              text-align: center;
+
+              height: 100%;
+              appearance: none;
+              border: none;
+              outline: none;
+              border-left: 1px solid $color-gray-light;
+              input::-webkit-outer-spin-button,
+              &::-webkit-inner-spin-button {
+                /* display: none; <- Crashes Chrome on hover */
+                -webkit-appearance: none;
+                margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+              }
+
+              &[type="number"] {
+                -moz-appearance: textfield; /* Firefox */
+              }
+            }
+          }
+
+          button {
+            width: 80%;
+            text-align: center;
+            font-family: "yekan regular";
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 28px;
+            letter-spacing: 0em;
+            border-radius: 1rem;
+            margin: 1rem;
+            outline: none;
+            transition: all 0.6s;
+            height: 68px;
+            background: linear-gradient(
+              264.59deg,
+              $color-green 44.53%,
+              $color-green 98.98%
+            );
+            &:hover {
+              background: transparent;
+              color: $color-green;
+              border: 1px solid $color-green;
+            }
+            // border: none;
+          }
+        }
+      }
+    }
+    .coins-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      height: 550px;
+      //   rectangle background
+      &::before {
+        z-index: -2;
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: -30%;
+        background-image: url("../../src/images/bg-list.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+      //   main list table
+      .price__table {
+        box-shadow: 0px 29px 51px rgba(0, 0, 0, 0.03);
+        padding: 1rem 2rem;
+        display: grid;
+        align-items: center;
+        background: $color-light;
+        width: 100%;
+        height: 350px;
+        overflow-y: auto;
+        border-radius: 1rem;
+        margin: 0 auto;
+        // scrollbar styling
+        scrollbar-width: thin;
+        scrollbar-color: $color-blue-secondary $color-gray;
+        scrollbar-width: thin;
+        &::-webkit-scrollbar {
+          width: 10px;
+        }
+        &::-webkit-scrollbar-track {
+          background-color: darkgrey;
+        }
+        &::-webkit-scrollbar-thumb {
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        }
+        .prices__table-header-row {
+          border-bottom: 1px solid $color-gray-light;
+        }
+        .list-column-header {
+          display: grid;
+
+          align-items: center;
+        }
+
+        .prices__table-header-col {
+          margin: 0 !important;
+          font-family: "yekan regular";
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 25px;
+          letter-spacing: 0em;
+          text-align: right;
+          padding: 0;
+          span {
+            font-size: 1rem;
+            font-family: "yekan regular";
+          }
+          &.cel-coloumn {
+            font-family: "yekan bakh";
+            color: #3c4a5b;
+            cursor: pointer;
+            position: relative;
+            height: 100%;
+            &::before {
+              content: "";
+              height: 2px;
+              background: $color-green;
+              width: 60%;
+              bottom: 0;
+              left: 50%;
+              position: absolute;
+              opacity: 0;
+              transition: all 0.5s;
+            }
+            &:hover {
+              color: $color-darker;
+              font-family: "yekan";
+              &::before {
+                opacity: 1;
+              }
+            }
+          }
+        }
+        tr {
+          display: grid;
+          grid-template-columns: 5fr 3fr 3fr 1fr;
+          justify-content: flex-start;
+          align-items: flex-start;
+          .fa-line-chart {
+            display: inline-block;
+            padding: 5px;
+            border-radius: 50%;
+            background: #ebebeb;
+            color: $color-gray-light;
+          }
+          td {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-family: "yekan";
+            font-size: 1.2rem;
+            font-weight: 500;
+            line-height: 25px;
+            letter-spacing: 0.06em;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+//
+//  styles for table rows
+.buy-price {
+  display: flex;
+  justify-content: flex-start;
+  p {
+    display: grid;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-family: "yekan";
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: 0.06em;
+    text-align: right;
+  }
+  i {
+    display: block;
+    background: transparent;
+  }
+  span {
+    // margin-right: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+      color: $color-light;
+      background: $color-gray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 2px;
+      // width: 17px;
+      // height: 11px;
+      padding: 3px;
+      // marign
+      margin-right: 4px;
+      font-family: "yekan";
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 15px;
+      letter-spacing: 0em;
+      text-align: right;
+    }
+    color: $color-gray;
+  }
+}
+.cel-coin {
+  font-family: "yekan";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0.06em;
+  text-align: right;
+
+  i {
+    margin-right: 0.5rem;
+  }
+}
+tbody {
+  padding: 0 !important;
+}
+@media screen and (max-width: 900px) {
+  #coin-prices {
+    .container {
+      grid-template-columns: 1fr;
+      .coins-list {
+        width: 70%;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+      }
+    }
+  }
+}
+@media screen and (max-width: 769px) {
+  #coin-prices {
+    .container {
+      .coins-list {
+        width: 100%;
+      }
+      .calculator {
+        width: 100%;
+        .content {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  #coin-prices {
+    .container {
+      .coins-list {
+        * {
+          font-size: 1rem;
+        }
+        width: 99vw;
+        margin: auto;
+        .price__table {
+          .prices__table-header-row {
+            .prices__table-header-col {
+              font-size: 1rem;
+              &.chart-icon {
+                display: none;
+              }
+            }
+          }
+
+          tbody {
+            tr {
+              grid-template-columns: 1fr 1fr 1fr;
+            }
+            .chart-icon {
+              display: none;
+            }
+            .buy-price {
+              i {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,225 @@
+#gain-money {
+  padding: 10rem 1rem;
+  .container {
+    padding: 4rem 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-around;
+    align-items: center;
+    .right {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      .header {
+        width: 100%;
+        text-align: center;
+        .badge {
+          font-family: "yekan regular";
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 25px;
+          letter-spacing: 0em;
+          text-align: right;
+          display: inline-block;
+          margin: 2rem 0;
+          color: $color-light;
+          background: $color-gray-light;
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+        }
+        .head {
+          color: $color-dark;
+          font-family: "yekan";
+          font-size: 28px;
+          font-weight: 900;
+          letter-spacing: 0em;
+          text-align: center;
+          margin: 0.5rem 0;
+          span {
+            position: relative;
+            color: $color-blue-dark;
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: 10px;
+              z-index: -1;
+              width: 100%;
+              height: 1rem;
+              background: $color-blue-lighter;
+            }
+          }
+        }
+        .head-bottom {
+          margin: 0.5rem;
+          color: $color-dark;
+          font-family: "yekan";
+          font-size: 28px;
+          font-weight: 900;
+          letter-spacing: 0em;
+          text-align: center;
+        }
+      }
+      .right-content {
+        // margin-top: ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        img {
+          width: 100%;
+          margin: auto;
+        }
+      }
+    }
+    .left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .top {
+        padding: 3rem 1rem;
+        font-family: "yekan regular" !important;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 25px;
+        letter-spacing: 0em;
+        text-align: right;
+
+        text-align: right;
+      }
+      .left-content {
+        width: 100%;
+        height: 100%;
+        gap: 2rem;
+        display: grid;
+        position: relative;
+        grid-template-columns: 1fr 1fr;
+        li {
+          border-radius: 2rem;
+          padding: 1.5rem 1rem 1.8rem 3rem;
+          cursor: pointer;
+          position: relative;
+          transition: all 0.5s;
+          &::after {
+            content: "";
+            width: 50%;
+            height: 3px;
+            position: absolute;
+            background: $color-green;
+            bottom: -3px;
+            transition: all 0.6s;
+          }
+          &:hover {
+            background: $color-light;
+            box-shadow: 0px 14px 80px 22px rgba(228, 233, 242, 0.64);
+            &::after {
+              width: 3px;
+              bottom: 30%;
+              right: -3px;
+              height: 40%;
+            }
+          }
+        }
+
+        background: transparent;
+        h4 {
+          font-family: "yekan";
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 25px;
+          letter-spacing: 0em;
+          text-align: right;
+          color: $color-dark;
+          color: $color-gray;
+          margin-bottom: 1rem;
+          .fa {
+            display: inline-block;
+            margin-left: 1rem;
+            color: $color-gray-light;
+            font-size: 1.5rem;
+            background: #dbdfe5;
+            &.fa-line-chart {
+              background: $color-green;
+              color: $color-light !important;
+            }
+          }
+        }
+        p {
+          font-family: "yekan regular";
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 22px;
+          letter-spacing: 0em;
+          text-align: right;
+          color: $color-darker;
+        }
+        &::before {
+          z-index: -1;
+          content: "";
+          position: absolute;
+
+          background: $color-blue-lighter;
+          filter: blur(400px);
+          width: 50vw;
+          height: 30vh;
+        }
+        &::after {
+          z-index: -2;
+          content: "";
+          position: absolute;
+
+          background: url("../../src/images/bg-list.jpg");
+
+          width: 100%;
+          height: 100%;
+          left: -20%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #gain-money {
+    .container {
+      display: grid;
+      gap: 3rem;
+      justify-content: space-between;
+      //   align-items: center;
+      gap: 5rem;
+      grid-template-columns: 1fr 1fr;
+      .right {
+        .header {
+          text-align: right;
+
+          .head {
+            text-align: right;
+            font-size: 3.8rem;
+          }
+          .head-bottom {
+            font-size: 3.8rem;
+          }
+        }
+      }
+      .left {
+        padding: 4rem 3rem;
+        .left-content {
+          &::after {
+            left: -60%;
+          }
+          margin-top: 5rem;
+          li {
+            width: 250px;
+            height: 100px;
+          }
+          &::before {
+            width: 80vw;
+            left: -50vw;
+            bottom: -50%;
+          }
+        }
+      }
+    }
+  }
+}

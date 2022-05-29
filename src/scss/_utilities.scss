@@ -1,0 +1,57 @@
+// centeralize in large screens
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.sticky {
+  background: linear-gradient(
+    top left to bottom right,
+    $color-blue-secondary,
+    #f5fff8
+  );
+}
+// button classes
+.btn {
+  display: inline-block;
+  padding: 1rem 1.6rem;
+
+  cursor: pointer;
+  transition: all 0.6s;
+  border-radius: 1rem;
+  &:hover {
+    background: transparent;
+  }
+}
+.btn-succes {
+  background: $color-green;
+  color: $color-light;
+  &:hover {
+    color: $color-green;
+    border-color: $color-green;
+    border: 1px solid;
+  }
+}
+.btn-light {
+  background: $color-light;
+  color: $color-gray !important;
+  &:hover {
+    color: $color-dark;
+    border-color: $color-dark;
+  }
+}
+.btn-blue {
+  background: $color-blue-dark;
+  color: $color-light;
+  &:hover {
+    color: $color-blue-dark;
+    border-color: $color-blue-dark;
+  }
+}
+.btn-dark {
+  background: $color-dark;
+  color: $color-light;
+  &:hover {
+    color: $color-dark;
+    border-color: $color-dark;
+  }
+}

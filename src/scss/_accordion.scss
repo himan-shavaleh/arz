@@ -1,0 +1,104 @@
+#faq {
+  padding: 4rem 0;
+  .container {
+    .header {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h4 {
+        font-family: "yekan";
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: 0em;
+        text-align: right;
+
+        color: $color-gray;
+
+        margin: 2rem 0;
+      }
+      p {
+        font-family: "yekan regular";
+        color: $color-dark;
+        margin-bottom: 2rem;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        letter-spacing: 0em;
+        text-align: center;
+      }
+    }
+    .accordion {
+      padding: 2rem 1rem;
+
+      li {
+        background: $color-light;
+        box-shadow: 0px -20.93px 67.2566px rgba(0, 0, 0, 0.03),
+          0px 54.4903px 39.3887px rgba(0, 0, 0, 0.0227778),
+          0px 32.3828px 21.4225px rgba(0, 0, 0, 0.0182222),
+          0px 16.8142px 10.9292px rgba(0, 0, 0, 0.015),
+          0px 6.85021px 5.48017px rgba(0, 0, 0, 0.0117778),
+          0px 1.55687px 2.64667px rgba(0, 0, 0, 0.00722222);
+        border-radius: 2rem;
+        margin: 2rem 1rem;
+        padding: 2rem 1rem;
+        height: 68px;
+        .link {
+          padding: 1rem;
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          font-family: "yekan bakh";
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 25px;
+          letter-spacing: 0em;
+          text-align: right;
+          color: $color-gray-light;
+          cursor: pointer;
+          height: 68px;
+          &:hover {
+            color: $color-green;
+          }
+        }
+        .submenu {
+          transition: all 0.5s;
+          padding: 2rem;
+          font-family: "yekan regular";
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 25px;
+          letter-spacing: 0em;
+          text-align: right;
+          color: $color-darker;
+          opacity: 1;
+          transform: translateY(-100%);
+          visibility: hidden;
+          //   height: 147px;
+          height: 0;
+        }
+      }
+    }
+  }
+}
+.show {
+  //   transition: all 1s;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  //   height: 147px !important;
+  height: auto;
+}
+.open-acc {
+  border-bottom: 1px solid $color-gray;
+}
+.height {
+  height: 300px !important;
+}
+@media screen and (min-width: 769px) {
+  .accordion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

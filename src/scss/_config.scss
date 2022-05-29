@@ -1,0 +1,35 @@
+// resets
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  text-align: right;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  // background: #f5f5f5;
+  padding-top: 3rem;
+  overflow-x: hidden !important;
+  direction: rtl;
+
+  position: relative;
+}
+
+// color Variables
+$color-light: #ffffff;
+$color-darker: #000000;
+$color-black: #38404d;
+$color-dark: #242424;
+$color-green: #3c9231;
+$color-red: #f01010;
+$color-bleu: #0853a5;
+$color-blue-secondary: #43907b;
+$color-blue-dark: #001c72;
+$color-gray: #687281;
+$color-gray-light: #8c9aab;
+$color-blue-lighter: #ccfcea;
+$color-primary: #3caf95;

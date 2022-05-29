@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font awesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- css styles -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>صرافی دیجیتال رمز ارزها</title>
+  </head>
+  <body>
+    <header id="header">
+      <div class="container">
+        <!-- for humberguer menu -->
+        <input type="checkbox" type="text" class="toggler" />
+        <div class="humburger"><div></div></div>
+        <!-- logo -->
+        <a class="logo" href="/"
+          ><img src="./src/images/logo.svg" alt="logo image"
+        /></a>
+        <!-- main navbar -->
+        <nav class="navbar">
+          <!-- right menu -->
+          <ul class="nav menu-features">
+            <li class="nav__item active">
+              <a class="nav__item-link" href="#">قیمت لحظه ای</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__item-link" href="#">خرید و فروش ارز </a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__item-link" href="#">آموزش ها</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__item-link" href="#">قوانین و مقررات</a>
+            </li>
+          </ul>
+          <!-- left menu -->
+          <ul class="nav menu">
+            <li class="nav__item">
+              <a class="nav__item-link" href="#">وبلاگ</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__item-link" href="#">تماس با ما </a>
+            </li>
+            <li class="">
+              <a href="#" class="btn btn-succes user-account-btn"
+                >حساب کاربری</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- slides of typography -->
+    <section id="slides">
+      <div class="container">
+        <article class="right">
+          <h1>صرافی هوشمند رمز ارز ها</h1>
+          <p>
+            و هتعاس 24 تروصب تابر نیا دینک دمآرد بسک باوخ رد دیرت زا تاعالطا و
+            شناد نودب لاتیجید یاهزرا دنمشوه یتالماعم تابر اب .دهد یم عالطا ربراک
+            هب تنرتنیا یعطق ای اطخ داجیا تروص رد و دزادرپ یم دیرت هب دنمشوه
+            الماک و هتفه زور7
+          </p>
+          <div class="btns">
+            <a href="#" class="btn btn-succes">همین حالا شروع کنید</a>
+            <a href="#" class="btn btn-light"
+              ><img src="./src/images/Play.svg" alt="play icon" /> اطلاعات
+              بیشتر</a
+            >
+          </div>
+        </article>
+        <a href="#" class="card">
+          <img src="./src/images/webMoney.jpg" alt="web money" />
+        </a>
+        <a href="#" class="card"
+          ><img src="./src/images/teter.jpg" alt="teter"
+        /></a>
+        <a href="#" class="card">
+          <img src="./src/images/perfectMoney.jpg" alt="perfectMoney" />
+        </a>
+      </div>
+    </section>
+    
+    <!-- coin Prices (price table and calculator) -->
+    <section id="coin-prices">
+      <div class="container">
+        <!-- price list table -->
+        <article class="coins-list">
+          <table class="price__table">
+            <thead class="price__table-header">
+              <tr class="prices__table-header-row">
+                <th class="prices__table-header-col list-column-header">
+                  لیست قیمت ارزها
+                  <span>currency price list</span>
+                </th>
+
+                <th class="prices__table-header-col cel-coloumn">
+                  خرید(تومان)
+                </th>
+                <th class="prices__table-header-col cel-coloumn">
+                  فروش(تومان)
+                </th>
+              </tr>
+              <td class="chart-icon"></td>
+            </thead>
+            <tbody class="prices__table-body"></tbody>
+          </table>
+        </article>
+
+        <!-- calculator -->
+        <article class="calculator">
+          <div class="content">
+            <div class="top">
+              <a href="#" class="btn btn-succes"
+                >خرید از ایکس نوین <i class="fa fa-sign-out"></i
+              ></a>
+              <a href="#" class="btn btn-light"
+                >فروش به ایکس نوین <i class="fa fa-sign-in"></i
+              ></a>
+            </div>
+            <form class="calc-form">
+              <div class="input-group">
+                <input type="number" name="irMoney" id="irMoney" />
+                <label for="irMoney">
+                  <img src="./src/images/irFlag.svg" alt="" />
+                  <span>
+                    IRR<br />
+                    (تومان)
+                  </span>
+                </label>
+              </div>
+              <div class="input-group change">
+                <input
+                  type="number"
+                  name="currencyAmount"
+                  id="currencyAmount"
+                />
+                
+              <div class="selector">
+               <div id="selectField">
+                <i class="fas fa-arrow-down"></i>
+                <p>
+                  <span>(BTC)</span>
+                  <span class="name">بیت کوین</span>
+                </p>
+                <img src="./src/images/Frame.svg" alt=""> 
+               </div>
+                 <ul class="select-options">
+
+                 </ul>
+        
+              </div>
+              </div>
+              <button class="btn btn-succes" type="submit">مبادله</button>
+            </form>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- about US -->
+    <section id="about-us">
+      <div class="container">
+        <article class="video">
+          <video width="320" height="240" controls>
+            <source
+              src="./src/images/001 Module Introduction.mp4"
+              type="video/mp4"
+            />
+            <source src="movie.ogg" type="video/ogg" />
+            Your browser does not support the video tag.
+            <span><i class="fa fa-play fa-4x"></i></span>
+          </video>
+        </article>
+        <article class="about-content">
+          <div class="top">
+            <span class="badge">کمی درباره ما بدانید</span>
+            <h2 class="head">ایکس نوین</h2>
+            <span class="head-bottom">صرافی ارز دیجیتال</span>
+            <p>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+              نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+              کتابهای
+            </p>
+            <div class="btns">
+              <a href="#" class="btn btn-succes">همین حالا شروع کنید</a>
+              <a href="#" class="btn btn-light"
+                >تاریخچه صرافی <img src="./src/images/Play.svg" alt="pla"
+              /></a>
+            </div>
+          </div>
+          <ul class="bottom">
+            <li>
+              <h5><span class="userAmount"></span>هزار</h5>
+              <p>کاربران سایت</p>
+            </li>
+            <li>
+              <h5><span class="authUserAmount"></span>هزار</h5>
+              <p>احراز هویت شده</p>
+            </li>
+            <li>
+              <h5><span class="requestSucces"></span>هزار</h5>
+              <p>سفارش موفق</p>
+            </li>
+            <li>
+              <h5><span class="workAges"></span>سال</h5>
+              <p>فعالیت صرافی</p>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <!-- how to gain money -->
+    <section id="gain-money">
+      <div class="container">
+        <article class="right">
+          <div class="header">
+            <span class="badge">چطوری کار کنیم؟</span>
+            <h2 class="head"><span>کسب سود</span> و درآمد</h2>
+            <span class="head-bottom">با سرمایه گذاری مطمعن</span>
+          </div>
+          <div class="right-content">
+            <img src="./src/images/gb.png" alt="" />
+          </div>
+        </article>
+        <article class="left">
+          <p class="top">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+            کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای
+          </p>
+          <ul class="left-content">
+            <li class="content-item">
+              <h4>
+                <i class="fa fa-briefcase" aria-hidden="true"></i>
+                خرید و فروش ساده
+              </h4>
+              <p>
+                تالماعم راکدوخ ماجنا یارب یا هفرح یتابر لاتیجید یاهزرا تالدابم
+                رد
+              </p>
+            </li>
+            <li class="content-item">
+              <h4>
+                <i class="fa fa-briefcase" aria-hidden="true"></i>
+                خرید و فروش ساده
+              </h4>
+              <p>
+                تالماعم راکدوخ ماجنا یارب یا هفرح یتابر لاتیجید یاهزرا تالدابم
+                رد
+              </p>
+            </li>
+            <li class="content-item">
+              <h4>
+                <i class="fa fa-briefcase" aria-hidden="true"></i>
+                خرید و فروش ساده
+              </h4>
+              <p>
+                تالماعم راکدوخ ماجنا یارب یا هفرح یتابر لاتیجید یاهزرا تالدابم
+                رد
+              </p>
+            </li>
+            <li class="content-item">
+              <h4>
+                <i class="fa fa-briefcase" aria-hidden="true"></i>
+                خرید و فروش ساده
+              </h4>
+              <p>
+                تالماعم راکدوخ ماجنا یارب یا هفرح یتابر لاتیجید یاهزرا تالدابم
+                رد
+              </p>
+            </li>
+            <li class="content-item">
+              <h4>
+                <i class="fa fa-briefcase" aria-hidden="true"></i>
+                خرید و فروش ساده
+              </h4>
+              <p>
+                تالماعم راکدوخ ماجنا یارب یا هفرح یتابر لاتیجید یاهزرا تالدابم
+                رد
+              </p>
+            </li>
+            <li class="content-item">
+              <h4>
+                <i class="fa fa-briefcase" aria-hidden="true"></i>
+                خرید و فروش ساده
+              </h4>
+              <p>
+                تالماعم راکدوخ ماجنا یارب یا هفرح یتابر لاتیجید یاهزرا تالدابم
+                رد
+              </p>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <!-- help you -->
+    <section id="help">
+      <div class="container">
+        <article class="mask">
+          <span class="badge">چطوری کار کنیم؟</span>
+          <h4 class="head">ما آماده کمک به شما هستیم</h4>
+          <p>
+            اینجا قراره اخبار ، آموزش های خرید و فروش و سرمایه گذاری در بازار
+            معاملاتی ارز دیجیتال رو به شما یاد بدیم .
+          </p>
+          <span class="like"
+            ><img src="./src/images/like.svg" alt="like icon" />همراه
+            باشید</span
+          >
+          <a href="#" class="btn btn-succes">ورود به آرشیو وبلاگ</a>
+        </article>
+        <article class="mask-photo mask1">
+          <h4>فاکتور قیمت ارز های دیجیتال</h4>
+          <a href="#"><span class="badge-photo">اخبار ارزها</span></a>
+        </article>
+        <article class="mask-photo mask2">
+          <h4>فاکتور قیمت ارز های دیجیتال</h4>
+          <a href="#"><span class="badge-photo">اخبار ارزها</span></a>
+
+          <p>
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+            استفاده از طراحان گرافیک است. ...
+          </p>
+        </article>
+        <article class="mask-photo mask3">
+          <h4>فاکتور قیمت ارز های دیجیتال</h4>
+          <a href="#"><span class="badge-photo">اخبار ارزها</span></a>
+        </article>
+      </div>
+    </section>
+    <!-- questions -->
+    <section id="faq" class="faq">
+      <div class="container">
+        <div class="header">
+          <h4>سوالات متداول</h4>
+          <p>
+            .تسا کیفارگ ناحارط زا هدافتسا اب و پاچ تعنص زا موهفمان یگداس دیلوت
+            اب یگتخاس نتم موسپیا مرول
+          </p>
+        </div>
+        <div class="grid">
+          <ul id="accordion" class="accordion">
+            <li class="open">
+              <div class="link">
+                <b>چطوری می تونم احراز هویت کنم ؟</b>
+
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="submenu hidden">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
+                مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
+                کاربردی می باشد. کتابهای
+              </div>
+            </li>
+            <li class="">
+              <div class="link">
+                <b>چطوری می تونم احراز هویت کنم ؟</b>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="submenu hidden">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
+                مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
+                کاربردی می باشد. کتابهای
+              </div>
+            </li>
+            <li class="">
+              <div class="link">
+                <b>چطوری می تونم احراز هویت کنم ؟</b>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="submenu hidden">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
+                مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
+                کاربردی می باشد. کتابهای
+              </div>
+            </li>
+            <li class="">
+              <div class="link">
+                <b>چطوری می تونم احراز هویت کنم ؟</b>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="submenu hidden">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
+                مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
+                کاربردی می باشد. کتابهای
+              </div>
+            </li>
+            <li class="">
+              <div class="link">
+                <b>چطوری می تونم احراز هویت کنم ؟</b>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="submenu hidden">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
+                مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
+                کاربردی می باشد. کتابهای
+              </div>
+            </li>
+
+            <li class="">
+              <div class="link">
+                <b>چطوری می تونم احراز هویت کنم ؟</b>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="submenu hidden">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
+                مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
+                کاربردی می باشد. کتابهای
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="green-bg">
+      <div class="container">
+        
+    </section>
+    <!-- footer -->
+    <footer id="footer">
+      <div class="container">
+        <div class="top">
+          <ul class="main-menu">
+            <li class="menu__item">
+              <a class="menu__item-link" href="#">درباره ما</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__item-link" href="#">پلن های اشتراک</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__item-link" href="#">آموزش ها</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__item-link" href="#">وبلاگ</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__item-link" href="#">تماس با ما</a>
+            </li>
+          </ul>
+          <ul class="social">
+            <li class="social__item">
+              <a href="" class="social__item-link"
+                ><i class="fab fa-facebook"></i
+              ></a>
+            </li>
+            <li class="social__item">
+              <a href="" class="social__item-link"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </li>
+            <li class="social__item">
+              <a href="" class="social__item-link"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </li>
+            <li class="social__item">
+              <a href="" class="social__item-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </li>
+            <li class="social__item">
+              <a href="" class="social__item-link"
+                ><i class="fab fa-telegram"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div class="content-footer">
+          <div class="right">
+            <a href="/" class="logo">
+              <img src="./src/images/logo.svg" alt="logo img" />
+            </a>
+            <p>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+              نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+              کتابهای زیادی در شصت و سه درصد گذشته،
+            </p>
+          </div>
+          <div class="left">
+          
+            <div class="left-content">
+              <ul>
+                <h4>دسترسی سریع</h4>
+                <li><a href="#">ویژگی ها</a></li>
+                <li><a href="#">حساب کاربری</a></li>
+                <li><a href="#">سوالات متداول</a></li>
+                <li><a href="#">قوانین و مقرارت</a></li>
+              </ul>
+              <ul>
+                <li><a href="#">منابع تجاری</a></li>
+                <li><a href="#">پلن های تجاری</a></li>
+                <li><a href="#">تماس با ما</a></li>
+              </ul>
+              <div class="card-photo">
+                <img src="./src/images/bg-footer.jpg" alt="footer">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="bottom">
+          <p>دشاب یم ظوفحم تیاسبو نیا یارب یونعم و یدام قوقح یمامت</p>
+        </div>
+      </div>
+      </div>
+    </footer>
+    <!-- js files -->
+    <script src="./src/js/accordion.js"></script>
+    <script src="./src/js/index.js"></script>
+  </body>
+</html>

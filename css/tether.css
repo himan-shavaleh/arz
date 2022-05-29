@@ -1,0 +1,1264 @@
+@font-face {
+  font-family: "yekan regular";
+  src: url(../../src/fonts/Yekan_Bakh_EN_04_Regular.ttf);
+}
+
+@font-face {
+  font-family: "yekan";
+  src: url("../../src/fonts/Yekan_Bakh_EN_06_Bold.ttf");
+}
+
+@font-face {
+  font-family: "yekan bakh";
+  src: url("../../src/fonts/Yekan_Bakh_EN_05_Medium.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  text-align: right;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  padding-top: 3rem;
+  overflow-x: hidden !important;
+  direction: rtl;
+  position: relative;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.sticky {
+  background: linear-gradient(top left to bottom right, #43907b, #f5fff8);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 1.6rem;
+  cursor: pointer;
+  transition: all 0.6s;
+  border-radius: 1rem;
+}
+
+.btn:hover {
+  background: transparent;
+}
+
+.btn-succes {
+  background: #3c9231;
+  color: #ffffff;
+}
+
+.btn-succes:hover {
+  color: #3c9231;
+  border-color: #3c9231;
+  border: 1px solid;
+}
+
+.btn-light {
+  background: #ffffff;
+  color: #687281 !important;
+}
+
+.btn-light:hover {
+  color: #242424;
+  border-color: #242424;
+}
+
+.btn-blue {
+  background: #001c72;
+  color: #ffffff;
+}
+
+.btn-blue:hover {
+  color: #001c72;
+  border-color: #001c72;
+}
+
+.btn-dark {
+  background: #242424;
+  color: #ffffff;
+}
+
+.btn-dark:hover {
+  color: #242424;
+  border-color: #242424;
+}
+
+#header {
+  background: transparent;
+  position: relative;
+  padding: 0.4rem 3rem;
+  position: sticky;
+  width: 100%;
+  z-index: 10;
+  height: 54px;
+}
+
+#header .container {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  background: transparent;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+#header .container .toggler {
+  display: none;
+}
+
+#header .container .humburger {
+  display: none;
+}
+
+#header .container .logo img {
+  width: 200px;
+  height: 100%;
+}
+
+#header .container .navbar {
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+}
+
+#header .container .navbar .nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+}
+
+#header .container .navbar .nav__item {
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: all 0.7s;
+  position: relative;
+}
+
+#header .container .navbar .nav__item::before {
+  opacity: 0;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+
+#header .container .navbar .nav__item:hover::before {
+  opacity: 1;
+  background: #3c9231;
+  box-shadow: 0 0 3rem #3c9231;
+}
+
+#header .container .navbar .nav__item-link {
+  font-family: "yekan regular";
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #000000;
+}
+
+#header .container .navbar .nav .btn {
+  font-family: "yekan bakh";
+  border-radius: 5rem !important;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+  box-shadow: 4px 10px 35px 5px rgba(60, 146, 49, 0.3);
+}
+
+@media screen and (max-width: 960px) {
+  #header .container {
+    grid-template-columns: 1fr 7fr;
+  }
+  #header .container .logo img {
+    width: 150px;
+  }
+  #header .container .navbar .nav {
+    gap: 1rem;
+    justify-content: center;
+  }
+  #header .container .navbar .nav__item-link {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  #header {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid rgba(140, 154, 171, 0.2);
+    z-index: 10;
+  }
+  #header .container {
+    grid-template-columns: 1fr;
+  }
+  #header .container .logo {
+    z-index: 11;
+  }
+  #header .container .logo img {
+    width: 150px;
+  }
+  #header .container .toggler {
+    display: block;
+    position: absolute;
+    left: 1rem;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    opacity: 0;
+    z-index: 3;
+  }
+  #header .container .toggler:checked:hover ~ .humburger > div {
+    transform: rotate(400deg);
+  }
+  #header .container .toggler:checked ~ .humburger > div {
+    width: 30px;
+    transform: rotate(45deg);
+  }
+  #header .container .toggler:checked ~ .humburger > div::before {
+    display: none;
+  }
+  #header .container .toggler:checked ~ .humburger > div::after {
+    top: 0;
+    transform: rotate(270deg);
+  }
+  #header .container .toggler:checked ~ .navbar {
+    visibility: visible;
+    transform: translateX(0) scale(1.2);
+  }
+  #header .container .humburger {
+    display: block;
+    z-index: 2;
+    position: absolute;
+    left: 1rem;
+    height: 40px;
+    width: 40px;
+    border: 3px solid #001c72;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #header .container .humburger div {
+    transition: all 0.5s;
+    width: 20px;
+    height: 3px;
+    left: 2px;
+    background: #001c72;
+    position: absolute;
+  }
+  #header .container .humburger div::before {
+    width: 10px;
+    height: 3px;
+    background: #001c72;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    content: "";
+  }
+  #header .container .humburger div::after {
+    width: 30px;
+    height: 3px;
+    background: #001c72;
+    position: absolute;
+    top: -8px;
+    left: 0;
+    content: "";
+  }
+  #header .container .navbar {
+    margin: auto;
+    background: linear-gradient(to bottom right, #ccfcea, #f5fff8);
+    transform: translateX(-200%) scale(1.01);
+    visibility: hidden;
+    position: absolute;
+    justify-content: center;
+    top: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.5s;
+    width: 100%;
+    height: 84vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #header .container .navbar .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #header .container .navbar .nav__item {
+    border-radius: 3px;
+    margin: 0.5rem 0;
+  }
+}
+
+body {
+  padding-top: 0;
+}
+
+#header {
+  position: absolute;
+  padding: 3rem 1rem;
+}
+
+#header .container .navbar .nav * {
+  color: #ffffff;
+}
+
+.header-content {
+  width: 100vw;
+  height: 80vh;
+  background: linear-gradient(180deg, #3caf95 0%, #20866f 100%);
+}
+
+.header-content .container {
+  position: relative;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.header-content .container::before {
+  content: "";
+  position: absolute;
+  left: 10%;
+  width: 360px;
+  height: 360px;
+  background: rgba(68, 217, 183, 0.57);
+  filter: blur(134px);
+  z-index: 2;
+}
+
+.header-content .container .top {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-content .container .top .left {
+  z-index: 3;
+}
+
+.header-content .container .top .right {
+  justify-self: flex-start;
+  padding-top: 5rem;
+  width: 100%;
+}
+
+.header-content .container .top .right h1 {
+  color: #242424;
+  font-family: "yekan";
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 0em;
+  text-align: right;
+  padding: 2rem 0;
+  color: #ffffff;
+}
+
+.header-content .container .top .right p {
+  margin-top: 1rem;
+  font-family: "yekan regular";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #ffffff;
+}
+
+.header-content .container .top .right p:first-child {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+}
+
+.header-content .container .bottom {
+  z-index: 5;
+  position: absolute;
+  bottom: -15%;
+  background: #ffffff;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  width: 90%;
+}
+
+.header-content .container .bottom .top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-content .container .bottom .top .btns {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  height: 68px;
+}
+
+.header-content .container .bottom .top .btns a {
+  height: 55px;
+  width: 100%;
+  font-family: Yekan Bakh;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-content .container .bottom .top .btns a:hover {
+  border: 1px solid #242424;
+  color: #242424;
+}
+
+.header-content .container .bottom .top .btns a.btn-light {
+  border: 1px solid #0853a5;
+  color: #0853a5;
+}
+
+.header-content .container .bottom .top .btns a.btn-light i {
+  transform: rotate(90deg);
+}
+
+.header-content .container .bottom .top .btns a i {
+  display: inline-block;
+  transform: rotate(-90deg);
+  margin-left: 2rem;
+}
+
+.header-content .container .bottom .top ul {
+  padding-top: 0 1rem;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  display: flex;
+}
+
+.header-content .container .bottom .top ul li {
+  border-left: 1px solid #687281;
+  padding: 0 1rem;
+  display: grid;
+}
+
+.header-content .container .bottom .top ul li:last-child {
+  border: none;
+}
+
+.header-content .container .bottom .top ul li:last-child p,
+.header-content .container .bottom .top ul li:last-child h4 {
+  color: #3c9231;
+}
+
+.header-content .container .bottom .top ul li P {
+  margin-top: 1rem;
+  font-family: "yekan regular";
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #687281;
+}
+
+.header-content .container .bottom .top ul li h4 {
+  font-family: "yekan bakh";
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #242424;
+}
+
+.header-content .container .bottom .calc-form {
+  display: grid;
+  grid-template-columns: 3fr 3fr 1fr;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.header-content .container .bottom .calc-form .input-group {
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  border: 1px solid #687281;
+  display: grid;
+  grid-template-columns: 5fr 2fr !important;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  height: 55px;
+}
+
+.header-content .container .bottom .calc-form .input-group.change {
+  grid-template-columns: 4fr 2fr;
+  position: relative;
+}
+
+.header-content .container .bottom .calc-form .input-group.change .select-options {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  left: 0;
+  top: 105%;
+  background: #ebebeb;
+  border-radius: 6px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.header-content .container .bottom .calc-form .input-group.change .select-options li {
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.2rem;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.header-content .container .bottom .calc-form .input-group.change .select-options li:hover {
+  background: #ffffff;
+}
+
+.header-content .container .bottom .calc-form .input-group.change .select-options li img {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+.header-content .container .bottom .calc-form .input-group.change .selector #selectField {
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.header-content .container .bottom .calc-form .input-group label {
+  border-right: 1px solid #8c9aab;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: transparent;
+}
+
+.header-content .container .bottom .calc-form .input-group select {
+  cursor: pointer;
+  border-radius: 2px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  color: #555;
+  font-size: inherit;
+  margin: 0;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  padding: 2rem 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: transparent;
+}
+
+.header-content .container .bottom .calc-form .input-group input {
+  font-family: "yekan bakh";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: center;
+  height: 100%;
+  appearance: none;
+  border: none;
+  outline: none;
+  border-left: 1px solid gray;
+}
+
+.header-content .container .bottom .calc-form .input-group input input::-webkit-outer-spin-button, .header-content .container .bottom .calc-form .input-group input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.header-content .container .bottom .calc-form .input-group input[type="number"] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+
+.header-content .container .bottom .calc-form button {
+  width: 100%;
+  text-align: center;
+  font-size: 1.6rem;
+  font-family: "yekan regular";
+  font-weight: 600;
+  margin: 1rem 0;
+  outline: none;
+  height: 55px;
+  background: #3caf95;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.header-content .container .bottom .calc-form button:hover {
+  background: transparent;
+  color: #3caf95;
+  border: 1px solid #3caf95;
+}
+
+@media screen and (max-width: 769px) {
+  .header-content .container .left {
+    display: none;
+  }
+  .header-content .container .bottom {
+    bottom: -40%;
+  }
+  .header-content .container .bottom .btns {
+    justify-content: center;
+  }
+  .header-content .container .bottom .top {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+  }
+  .header-content .container .bottom .top ul {
+    justify-content: space-around;
+  }
+  .header-content .container .bottom .top {
+    flex-direction: column;
+  }
+  .header-content .container .bottom .calc-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+#help {
+  padding: 5rem 1rem;
+}
+
+#help .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+#help .container.blogBG {
+  position: relative;
+}
+
+#help .container.blogBG::after {
+  z-index: -2;
+  width: 60%;
+  height: 150%;
+  content: "";
+  left: -20%;
+  position: absolute;
+  background: url(../../src/images/bg-list.jpg);
+}
+
+#help .container.blogBG::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -90%;
+  filter: blur(200px);
+  width: 100vw;
+  height: 100vh;
+  background: rgba(204, 252, 234, 0.4);
+}
+
+#help .container .mask {
+  padding: 3rem 1rem;
+}
+
+#help .container .mask * {
+  margin: 1rem 0;
+}
+
+#help .container .mask span {
+  font-family: "yekan regular";
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+}
+
+#help .container .mask span img {
+  margin-left: 0.3rem;
+}
+
+#help .container .mask .head {
+  font-family: "yekan";
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #242424;
+}
+
+#help .container .mask .badge {
+  background: rgba(0, 28, 114, 0.1);
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.7rem;
+  display: inline-block !important;
+}
+
+#help .container .mask p {
+  font-family: "yekan regular";
+  width: 80%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+}
+
+#help .container .mask .like {
+  color: #3c9231;
+  font-size: 1.2rem;
+}
+
+#help .container .mask .like img {
+  margin: 1rem 0;
+}
+
+#help .container .mask .btn {
+  display: block;
+  border: 1px solid #8c9aab;
+  border-radius: 1rem;
+  font-family: "yekan regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: center;
+  float: left;
+  margin-left: 2rem;
+  padding: 1rem 2rem;
+}
+
+#help .container .mask1 {
+  background: url("../../src/images/Mask1.jpg") no-repeat center center/cover;
+}
+
+#help .container .mask2 {
+  background: url("../../src/images/Mask2.jpg") no-repeat center center/cover;
+}
+
+#help .container .mask3 {
+  background: url("../../src/images/Mask3.jpg") no-repeat center center/cover;
+}
+
+#help .container .mask-photo {
+  border-radius: 3rem;
+  width: 230px;
+  margin: 2rem auto;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 1rem;
+  box-shadow: inset -10rem -10rem 10rem #242424;
+}
+
+#help .container .mask-photo * {
+  z-index: 10;
+}
+
+#help .container .mask-photo h4 {
+  color: #ffffff;
+  font-family: "yekan";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+}
+
+#help .container .mask-photo p {
+  font-family: "yekan";
+  font-size: 14px;
+  color: #8c9aab;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: right;
+}
+
+#help .container .mask-photo a {
+  font-family: "yekan";
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: right;
+  padding: 0.2rem 0.5rem;
+  background: #687281;
+  color: #ffffff;
+  width: 60px;
+  text-align: center;
+  border-radius: 0.3rem;
+  margin: 2rem;
+}
+
+@media screen and (min-width: 769px) {
+  #help .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #help .container {
+    grid-template-columns: 3fr 2fr 2fr 2fr;
+  }
+}
+
+#subjects {
+  padding-top: 20rem !important;
+}
+
+#subjects .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+#subjects .container .subject {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#subjects .container .subject div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 3rem 2rem;
+}
+
+#subjects .container .subject div .badge {
+  font-family: "yekan regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #000000;
+}
+
+#subjects .container .subject div .head {
+  color: #242424;
+  font-family: Yekan Bakh;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+#subjects .container .subject div .head span {
+  position: relative;
+  color: #001c72;
+}
+
+#subjects .container .subject div .head span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: 1rem;
+  background: #ccfcea;
+}
+
+#subjects .container .subject img,
+#subjects .container .subject video {
+  width: 100%;
+  margin: auto;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 0px 14px 90px 22px rgba(228, 233, 242, 0.64);
+  border-radius: 30px;
+}
+
+#subjects .container .subject a {
+  margin: 1rem 0;
+}
+
+#subjects .container .subject p {
+  font-family: "yekan regular";
+  color: #000000;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: right;
+}
+
+@media screen and (max-width: 769px) {
+  #subjects {
+    margin-top: 10rem;
+  }
+  #subjects .container {
+    flex-direction: column;
+  }
+  #subjects .container .subject {
+    display: flex;
+    flex-direction: column;
+  }
+  #subjects .container .subject div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: center;
+  }
+  #subjects .container .subject div .head {
+    font-size: 2.5rem;
+  }
+  #subjects .container .subject div p {
+    font-family: "yekan regular";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: right;
+  }
+  #subjects .container .subject img,
+  #subjects .container .subject video {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+.btn-gray {
+  color: #ffffff;
+  background: #a9adb5;
+  padding: 2rem 3.5rem;
+}
+
+.btn-gray:hover {
+  color: #000000;
+  border: 1px solid #a9adb5;
+}
+
+.btn-succes {
+  padding: 2rem 3rem;
+}
+
+#faq {
+  padding: 4rem 0;
+}
+
+#faq .container .header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#faq .container .header h4 {
+  font-family: "yekan";
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #687281;
+  margin: 2rem 0;
+}
+
+#faq .container .header p {
+  font-family: "yekan regular";
+  color: #242424;
+  margin-bottom: 2rem;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+#faq .container .accordion {
+  padding: 2rem 1rem;
+}
+
+#faq .container .accordion li {
+  background: #ffffff;
+  box-shadow: 0px -20.93px 67.2566px rgba(0, 0, 0, 0.03), 0px 54.4903px 39.3887px rgba(0, 0, 0, 0.0227778), 0px 32.3828px 21.4225px rgba(0, 0, 0, 0.0182222), 0px 16.8142px 10.9292px rgba(0, 0, 0, 0.015), 0px 6.85021px 5.48017px rgba(0, 0, 0, 0.0117778), 0px 1.55687px 2.64667px rgba(0, 0, 0, 0.00722222);
+  border-radius: 2rem;
+  margin: 2rem 1rem;
+  padding: 2rem 1rem;
+  height: 68px;
+}
+
+#faq .container .accordion li .link {
+  padding: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-family: "yekan bakh";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #8c9aab;
+  cursor: pointer;
+  height: 68px;
+}
+
+#faq .container .accordion li .link:hover {
+  color: #3c9231;
+}
+
+#faq .container .accordion li .submenu {
+  transition: all 0.5s;
+  padding: 2rem;
+  font-family: "yekan regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #000000;
+  opacity: 1;
+  transform: translateY(-100%);
+  visibility: hidden;
+  height: 0;
+}
+
+.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  height: auto;
+}
+
+.open-acc {
+  border-bottom: 1px solid #687281;
+}
+
+.height {
+  height: 300px !important;
+}
+
+@media screen and (min-width: 769px) {
+  .accordion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+#green-bg {
+  padding: 1rem 2rem !important;
+}
+
+#green-bg .container {
+  width: 100%;
+  height: 195px;
+  background: #3c9231;
+  border-radius: 2rem;
+}
+
+#footer .container {
+  display: grid;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer .container .top {
+  border-bottom: rgba(140, 154, 171, 0.7);
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  gap: 3rem;
+  align-items: center;
+}
+
+#footer .container .top .social,
+#footer .container .top .main-menu {
+  width: 100%;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#footer .container .top .social a,
+#footer .container .top .main-menu a {
+  font-family: "yekan bakh";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #687281;
+  text-align: right;
+}
+
+#footer .container .top .social a .fab,
+#footer .container .top .main-menu a .fab {
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  border: #8c9aab 1px solid;
+}
+
+#footer .container .bottom {
+  border-top: rgba(140, 154, 171, 0.4);
+  padding: 2rem 1rem;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer .container .bottom p {
+  text-align: center;
+  font-family: "yekan regular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #000000;
+}
+
+.content-footer {
+  border-bottom: rgba(140, 154, 171, 0.7);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.content-footer .right {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-footer .right p {
+  padding: 2rem 0;
+  font-family: "yekan regular";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+}
+
+.content-footer .left h4 {
+  font-family: "yekan bakh";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #242424;
+  margin-bottom: 2rem;
+}
+
+.content-footer .left-content {
+  gap: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.content-footer .left-content ul a {
+  font-family: "yekan bakh";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  color: #8c9aab;
+  margin: 1rem 0 !important;
+}
+
+@media screen and (min-width: 769px) {
+  #footer .container .top {
+    flex-direction: row;
+  }
+  #footer .container .top .social {
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  #footer .container .top .main-menu {
+    justify-content: space-between;
+  }
+  #footer .container .top .main-menu a {
+    font-size: 1.6rem;
+  }
+  #footer .container .content-footer {
+    grid-template-columns: 2fr 3fr;
+  }
+  #footer .container .content-footer .right p {
+    font-size: 1.6rem;
+  }
+  #footer .container .content-footer .left h4 {
+    font-size: 1.8rem;
+    margin-right: 1rem;
+  }
+  #footer .container .content-footer .left a {
+    font-size: 1.6rem;
+  }
+}

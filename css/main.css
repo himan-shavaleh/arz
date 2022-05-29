@@ -1,0 +1,1828 @@
+@font-face {
+  font-family: "yekan regular";
+  src: url(../../src/fonts/Yekan_Bakh_EN_04_Regular.ttf);
+}
+
+@font-face {
+  font-family: "yekan";
+  src: url("../../src/fonts/Yekan_Bakh_EN_06_Bold.ttf");
+}
+
+@font-face {
+  font-family: "yekan bakh";
+  src: url("../../src/fonts/Yekan_Bakh_EN_05_Medium.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  text-align: right;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  padding-top: 3rem;
+  overflow-x: hidden !important;
+  direction: rtl;
+  position: relative;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.sticky {
+  background: linear-gradient(top left to bottom right, #43907b, #f5fff8);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 1.6rem;
+  cursor: pointer;
+  transition: all 0.6s;
+  border-radius: 1rem;
+}
+
+.btn:hover {
+  background: transparent;
+}
+
+.btn-succes {
+  background: #3c9231;
+  color: #ffffff;
+}
+
+.btn-succes:hover {
+  color: #3c9231;
+  border-color: #3c9231;
+  border: 1px solid;
+}
+
+.btn-light {
+  background: #ffffff;
+  color: #687281 !important;
+}
+
+.btn-light:hover {
+  color: #242424;
+  border-color: #242424;
+}
+
+.btn-blue {
+  background: #001c72;
+  color: #ffffff;
+}
+
+.btn-blue:hover {
+  color: #001c72;
+  border-color: #001c72;
+}
+
+.btn-dark {
+  background: #242424;
+  color: #ffffff;
+}
+
+.btn-dark:hover {
+  color: #242424;
+  border-color: #242424;
+}
+
+#header {
+  background: transparent;
+  position: relative;
+  padding: 0.4rem 3rem;
+  position: sticky;
+  width: 100%;
+  z-index: 10;
+  height: 54px;
+}
+
+#header .container {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  background: transparent;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+#header .container .toggler {
+  display: none;
+}
+
+#header .container .humburger {
+  display: none;
+}
+
+#header .container .logo img {
+  width: 200px;
+  height: 100%;
+}
+
+#header .container .navbar {
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+}
+
+#header .container .navbar .nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+}
+
+#header .container .navbar .nav__item {
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: all 0.7s;
+  position: relative;
+}
+
+#header .container .navbar .nav__item::before {
+  opacity: 0;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+
+#header .container .navbar .nav__item:hover::before {
+  opacity: 1;
+  background: #3c9231;
+  box-shadow: 0 0 3rem #3c9231;
+}
+
+#header .container .navbar .nav__item-link {
+  font-family: "yekan regular";
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #000000;
+}
+
+#header .container .navbar .nav .btn {
+  font-family: "yekan bakh";
+  border-radius: 5rem !important;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+  box-shadow: 4px 10px 35px 5px rgba(60, 146, 49, 0.3);
+}
+
+@media screen and (max-width: 960px) {
+  #header .container {
+    grid-template-columns: 1fr 7fr;
+  }
+  #header .container .logo img {
+    width: 150px;
+  }
+  #header .container .navbar .nav {
+    gap: 1rem;
+    justify-content: center;
+  }
+  #header .container .navbar .nav__item-link {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  #header {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid rgba(140, 154, 171, 0.2);
+    z-index: 10;
+  }
+  #header .container {
+    grid-template-columns: 1fr;
+  }
+  #header .container .logo {
+    z-index: 11;
+  }
+  #header .container .logo img {
+    width: 150px;
+  }
+  #header .container .toggler {
+    display: block;
+    position: absolute;
+    left: 1rem;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    opacity: 0;
+    z-index: 3;
+  }
+  #header .container .toggler:checked:hover ~ .humburger > div {
+    transform: rotate(400deg);
+  }
+  #header .container .toggler:checked ~ .humburger > div {
+    width: 30px;
+    transform: rotate(45deg);
+  }
+  #header .container .toggler:checked ~ .humburger > div::before {
+    display: none;
+  }
+  #header .container .toggler:checked ~ .humburger > div::after {
+    top: 0;
+    transform: rotate(270deg);
+  }
+  #header .container .toggler:checked ~ .navbar {
+    visibility: visible;
+    transform: translateX(0) scale(1.2);
+  }
+  #header .container .humburger {
+    display: block;
+    z-index: 2;
+    position: absolute;
+    left: 1rem;
+    height: 40px;
+    width: 40px;
+    border: 3px solid #001c72;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #header .container .humburger div {
+    transition: all 0.5s;
+    width: 20px;
+    height: 3px;
+    left: 2px;
+    background: #001c72;
+    position: absolute;
+  }
+  #header .container .humburger div::before {
+    width: 10px;
+    height: 3px;
+    background: #001c72;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    content: "";
+  }
+  #header .container .humburger div::after {
+    width: 30px;
+    height: 3px;
+    background: #001c72;
+    position: absolute;
+    top: -8px;
+    left: 0;
+    content: "";
+  }
+  #header .container .navbar {
+    margin: auto;
+    background: linear-gradient(to bottom right, #ccfcea, #f5fff8);
+    transform: translateX(-200%) scale(1.01);
+    visibility: hidden;
+    position: absolute;
+    justify-content: center;
+    top: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.5s;
+    width: 100%;
+    height: 84vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #header .container .navbar .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #header .container .navbar .nav__item {
+    border-radius: 3px;
+    margin: 0.5rem 0;
+  }
+}
+
+#slides * {
+  z-index: 9;
+}
+
+#slides .container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 5rem 2rem;
+}
+
+#slides .container .right {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+}
+
+#slides .container .right::before {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  top: -70%;
+  right: -100%;
+  background: #ccfcea;
+  filter: blur(400px);
+  width: 50vw;
+  height: 50vh;
+}
+
+#slides .container .right h1 {
+  font-family: "yekan";
+  font-size: 3.8rem;
+  font-weight: 1000;
+  letter-spacing: 0em;
+  text-align: right;
+  margin-bottom: 2rem;
+  color: #001c72;
+}
+
+#slides .container .right .btns {
+  gap: 1rem;
+  display: flex;
+}
+
+#slides .container .right p {
+  font-family: "yekan regular";
+  font-size: 18px !important;
+  font-weight: 300 !important;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: right;
+  margin-bottom: 3.5rem;
+  color: #000000;
+}
+
+#slides .container .right a {
+  font-family: "yekan regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+#slides .container .right a.btn-light {
+  color: #0853a5 !important;
+  transition: all 0.7s;
+}
+
+#slides .container .right a.btn-light:hover {
+  border: 1px solid #0853a5;
+}
+
+#slides .container .card {
+  transition: all 0.5s;
+  margin: auto;
+  border-radius: 2rem;
+  background: transparent;
+}
+
+#slides .container .card img {
+  margin: 1rem 0;
+  box-shadow: 0 1rem 2rem #8c9aab;
+  border-radius: 3rem;
+  width: 90%;
+  height: 100%;
+}
+
+#slides .container .card:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 900px) {
+  #slides {
+    padding: 10rem 2rem 2rem 2rem;
+  }
+  #slides .container {
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+  }
+  #slides .container .right h1 {
+    font-size: 3rem;
+  }
+  #slides .container .right a {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  #slides {
+    padding: 10rem 2rem 2rem 2rem;
+  }
+  #slides .container {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+  #slides .container .right h1 {
+    font-size: 2.8rem;
+  }
+  #slides .container .right .btn {
+    width: 100%;
+  }
+  #slides .container .right a {
+    font-size: 1.4rem;
+  }
+  #slides .container .card img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #slides {
+    padding: 10rem 2rem 2rem 2rem;
+  }
+  #slides .container {
+    justify-content: center;
+    justify-content: center;
+  }
+  #slides .container .right h1 {
+    font-size: 2.3rem;
+  }
+  #slides .container .right a {
+    font-size: 1rem;
+  }
+}
+
+#coin-prices {
+  padding: 5rem 1rem 5rem 1rem;
+}
+
+#coin-prices .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#coin-prices .container .calculator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin: auto;
+  height: 550px;
+}
+
+#coin-prices .container .calculator::before {
+  z-index: -1;
+  content: "";
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  background-image: url("../../src/images/bg-calc.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#coin-prices .container .calculator .content {
+  box-shadow: 0px 29px 51px rgba(0, 0, 0, 0.13);
+  width: 419px;
+  display: grid;
+  grid-template-rows: 1fr 6fr;
+  padding: 4rem 4rem;
+  height: 410px;
+  border-radius: 2rem;
+  background: #ffffff;
+  margin-top: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#coin-prices .container .calculator .content .top {
+  width: 90%;
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+#coin-prices .container .calculator .content .top a {
+  height: 51px;
+  width: 100%;
+  border-radius: 1rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "yekan bakh";
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  transition: all 0.5s;
+}
+
+#coin-prices .container .calculator .content .top a.btn-light {
+  border: 1px solid #242424;
+}
+
+#coin-prices .container .calculator .content .top a:hover {
+  border: 1px solid #3c9231;
+  color: #3c9231 !important;
+}
+
+#coin-prices .container .calculator .content .top a i {
+  transform: rotate(90deg);
+  margin-right: 1rem;
+}
+
+#coin-prices .container .calculator .content .calc-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#coin-prices .container .calculator .content .calc-form .input-group {
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  margin: auto;
+  height: 100%;
+  border: 1px solid #687281;
+  display: grid;
+  grid-template-columns: 4fr 2fr !important;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  height: 68px;
+}
+
+#coin-prices .container .calculator .content .calc-form .input-group.change {
+  grid-template-columns: 4fr 2fr;
+  position: relative;
+}
+
+#coin-prices .container .calculator .content .calc-form .input-group.change .select-options {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 110px;
+  top: 105%;
+  background: #ebebeb;
+  border-radius: 6px;
+  overflow: hidden;
+  position: absolute;
+}
+
+#coin-prices .container .calculator .content .calc-form .input-group.change .select-options li {
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.2rem;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+#coin-prices .container .calculator .content .calc-form .input-group.change .select-options li:hover {
+  background: #ffffff;
+}
+
+#coin-prices .container .calculator .content .calc-form .input-group.change .select-options li img {
+  width: 25px;
+}
+
+#coin-prices .container .calculator .content .calc-form .input-group.change .selector #selectField {
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  gap: 3px;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+#coin-prices .container .calculator .content .calc-form .input-group.change .selector #selectField p {
+  display: grid;
+}
+
+#coin-prices .container .calculator .content .calc-form .input-group label {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: transparent;
+  padding-right: 1rem;
+  height: 100%;
+  color: #000000;
+  font-family: "yekan bakh";
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+#coin-prices .container .calculator .content .calc-form .input-group input {
+  font-family: "yekan bakh";
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: center;
+  height: 100%;
+  appearance: none;
+  border: none;
+  outline: none;
+  border-left: 1px solid #8c9aab;
+}
+
+#coin-prices .container .calculator .content .calc-form .input-group input input::-webkit-outer-spin-button, #coin-prices .container .calculator .content .calc-form .input-group input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+#coin-prices .container .calculator .content .calc-form .input-group input[type="number"] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+
+#coin-prices .container .calculator .content .calc-form button {
+  width: 80%;
+  text-align: center;
+  font-family: "yekan regular";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0em;
+  border-radius: 1rem;
+  margin: 1rem;
+  outline: none;
+  transition: all 0.6s;
+  height: 68px;
+  background: linear-gradient(264.59deg, #3c9231 44.53%, #3c9231 98.98%);
+}
+
+#coin-prices .container .calculator .content .calc-form button:hover {
+  background: transparent;
+  color: #3c9231;
+  border: 1px solid #3c9231;
+}
+
+#coin-prices .container .coins-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 550px;
+}
+
+#coin-prices .container .coins-list::before {
+  z-index: -2;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -30%;
+  background-image: url("../../src/images/bg-list.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#coin-prices .container .coins-list .price__table {
+  box-shadow: 0px 29px 51px rgba(0, 0, 0, 0.03);
+  padding: 1rem 2rem;
+  display: grid;
+  align-items: center;
+  background: #ffffff;
+  width: 100%;
+  height: 350px;
+  overflow-y: auto;
+  border-radius: 1rem;
+  margin: 0 auto;
+  scrollbar-width: thin;
+  scrollbar-color: #43907b #687281;
+  scrollbar-width: thin;
+}
+
+#coin-prices .container .coins-list .price__table::-webkit-scrollbar {
+  width: 10px;
+}
+
+#coin-prices .container .coins-list .price__table::-webkit-scrollbar-track {
+  background-color: darkgrey;
+}
+
+#coin-prices .container .coins-list .price__table::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+#coin-prices .container .coins-list .price__table .prices__table-header-row {
+  border-bottom: 1px solid #8c9aab;
+}
+
+#coin-prices .container .coins-list .price__table .list-column-header {
+  display: grid;
+  align-items: center;
+}
+
+#coin-prices .container .coins-list .price__table .prices__table-header-col {
+  margin: 0 !important;
+  font-family: "yekan regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+  padding: 0;
+}
+
+#coin-prices .container .coins-list .price__table .prices__table-header-col span {
+  font-size: 1rem;
+  font-family: "yekan regular";
+}
+
+#coin-prices .container .coins-list .price__table .prices__table-header-col.cel-coloumn {
+  font-family: "yekan bakh";
+  color: #3c4a5b;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+}
+
+#coin-prices .container .coins-list .price__table .prices__table-header-col.cel-coloumn::before {
+  content: "";
+  height: 2px;
+  background: #3c9231;
+  width: 60%;
+  bottom: 0;
+  left: 50%;
+  position: absolute;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+#coin-prices .container .coins-list .price__table .prices__table-header-col.cel-coloumn:hover {
+  color: #000000;
+  font-family: "yekan";
+}
+
+#coin-prices .container .coins-list .price__table .prices__table-header-col.cel-coloumn:hover::before {
+  opacity: 1;
+}
+
+#coin-prices .container .coins-list .price__table tr {
+  display: grid;
+  grid-template-columns: 5fr 3fr 3fr 1fr;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#coin-prices .container .coins-list .price__table tr .fa-line-chart {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 50%;
+  background: #ebebeb;
+  color: #8c9aab;
+}
+
+#coin-prices .container .coins-list .price__table tr td {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "yekan";
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0.06em;
+  text-align: right;
+}
+
+.buy-price {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.buy-price p {
+  display: grid;
+  margin-right: 1rem;
+  justify-content: center;
+  align-items: center;
+  font-family: "yekan";
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0.06em;
+  text-align: right;
+}
+
+.buy-price i {
+  display: block;
+  background: transparent;
+}
+
+.buy-price span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #687281;
+}
+
+.buy-price span i {
+  color: #ffffff;
+  background: #687281;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 2px;
+  padding: 3px;
+  margin-right: 4px;
+  font-family: "yekan";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: right;
+}
+
+.cel-coin {
+  font-family: "yekan";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0.06em;
+  text-align: right;
+}
+
+.cel-coin i {
+  margin-right: 0.5rem;
+}
+
+tbody {
+  padding: 0 !important;
+}
+
+@media screen and (max-width: 900px) {
+  #coin-prices .container {
+    grid-template-columns: 1fr;
+  }
+  #coin-prices .container .coins-list {
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  #coin-prices .container .coins-list {
+    width: 100%;
+  }
+  #coin-prices .container .calculator {
+    width: 100%;
+  }
+  #coin-prices .container .calculator .content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #coin-prices .container .coins-list {
+    width: 99vw;
+    margin: auto;
+  }
+  #coin-prices .container .coins-list * {
+    font-size: 1rem;
+  }
+  #coin-prices .container .coins-list .price__table .prices__table-header-row .prices__table-header-col {
+    font-size: 1rem;
+  }
+  #coin-prices .container .coins-list .price__table .prices__table-header-row .prices__table-header-col.chart-icon {
+    display: none;
+  }
+  #coin-prices .container .coins-list .price__table tbody tr {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  #coin-prices .container .coins-list .price__table tbody .chart-icon {
+    display: none;
+  }
+  #coin-prices .container .coins-list .price__table tbody .buy-price i {
+    display: none;
+  }
+}
+
+#about-us {
+  background: #f5fff8;
+}
+
+#about-us .container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#about-us .container .video {
+  z-index: 4;
+  margin: 0 auto;
+  background: rgba(59, 145, 48, 0.07);
+  padding: 1rem;
+  border-radius: 2rem;
+  width: 90%;
+}
+
+#about-us .container .video video {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+#about-us .container .about-content {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+#about-us .container .about-content .top {
+  padding: 3rem;
+}
+
+#about-us .container .about-content .top .badge {
+  display: inline-block;
+  font-family: "yekan regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  font-size: normal;
+  text-align: right;
+  margin: 1rem 0 !important;
+  color: #8c9aab;
+  padding: 0.3rem 0.2rem;
+  background: rgba(0, 28, 114, 0.1);
+  border-radius: 5px;
+}
+
+#about-us .container .about-content .top .head {
+  color: #3c9231;
+  font-family: "yekan";
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: 0em;
+  text-align: right;
+  margin: 0.5rem 0;
+}
+
+#about-us .container .about-content .top .head-bottom {
+  margin: 0.5rem;
+  color: #001c72;
+  font-family: "yekan";
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: 0em;
+  text-align: right;
+  margin-bottom: 2rem;
+}
+
+#about-us .container .about-content .top .btns {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+#about-us .container .about-content .top .btns a {
+  font-family: "yekan regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+  gap: 1rem;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  margin: 1rem 0.3rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  height: 54px;
+  width: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about-us .container .about-content .top .btns a.btn-light {
+  color: #000000 !important;
+}
+
+#about-us .container .about-content .top .btns a.btn-light:hover {
+  border: 1px solid #001c72;
+  color: #001c72;
+}
+
+#about-us .container .about-content .top p {
+  font-family: "yekan regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #000000;
+  padding: 2rem 0;
+}
+
+#about-us .container .about-content .bottom {
+  position: absolute;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: -20%;
+  width: 105vw;
+  text-align: center;
+  margin: auto;
+  background: #ffffff;
+}
+
+#about-us .container .about-content .bottom li {
+  border-left: 1px solid rgba(140, 154, 171, 0.5);
+  padding: 0 1.2rem;
+  margin: 0 2.3rem;
+  text-align: center;
+}
+
+#about-us .container .about-content .bottom li h5 {
+  font-family: "yekan";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #242424;
+  text-align: center;
+}
+
+#about-us .container .about-content .bottom li p {
+  margin-top: 1rem;
+  font-family: "yekan bakh";
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #687281;
+}
+
+@media screen and (min-width: 769px) {
+  #about-us .container {
+    grid-template-columns: 2fr 3fr;
+  }
+  #about-us .container .video {
+    height: 100%;
+    position: relative;
+    bottom: -15%;
+  }
+  #about-us .container .about-content .bottom {
+    padding: 2.4rem 0;
+    right: -40%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #about-us .container .about-content .bottom {
+    right: -40%;
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  #about-us .container .about-content .bottom {
+    right: -70%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  #about-us .container .about-content .bottom {
+    right: -80%;
+  }
+}
+
+#gain-money {
+  padding: 10rem 1rem;
+}
+
+#gain-money .container {
+  padding: 4rem 2rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#gain-money .container .right {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+#gain-money .container .right .header {
+  width: 100%;
+  text-align: center;
+}
+
+#gain-money .container .right .header .badge {
+  font-family: "yekan regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+  display: inline-block;
+  margin: 2rem 0;
+  color: #ffffff;
+  background: #8c9aab;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+#gain-money .container .right .header .head {
+  color: #242424;
+  font-family: "yekan";
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0em;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+#gain-money .container .right .header .head span {
+  position: relative;
+  color: #001c72;
+}
+
+#gain-money .container .right .header .head span::before {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  z-index: -1;
+  width: 100%;
+  height: 1rem;
+  background: #ccfcea;
+}
+
+#gain-money .container .right .header .head-bottom {
+  margin: 0.5rem;
+  color: #242424;
+  font-family: "yekan";
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+#gain-money .container .right .right-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#gain-money .container .right .right-content img {
+  width: 100%;
+  margin: auto;
+}
+
+#gain-money .container .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#gain-money .container .left .top {
+  padding: 3rem 1rem;
+  font-family: "yekan regular" !important;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+  text-align: right;
+}
+
+#gain-money .container .left .left-content {
+  width: 100%;
+  height: 100%;
+  gap: 2rem;
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr 1fr;
+  background: transparent;
+}
+
+#gain-money .container .left .left-content li {
+  border-radius: 2rem;
+  padding: 1.5rem 1rem 1.8rem 3rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s;
+}
+
+#gain-money .container .left .left-content li::after {
+  content: "";
+  width: 50%;
+  height: 3px;
+  position: absolute;
+  background: #3c9231;
+  bottom: -3px;
+  transition: all 0.6s;
+}
+
+#gain-money .container .left .left-content li:hover {
+  background: #ffffff;
+  box-shadow: 0px 14px 80px 22px rgba(228, 233, 242, 0.64);
+}
+
+#gain-money .container .left .left-content li:hover::after {
+  width: 3px;
+  bottom: 30%;
+  right: -3px;
+  height: 40%;
+}
+
+#gain-money .container .left .left-content h4 {
+  font-family: "yekan";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #242424;
+  color: #687281;
+  margin-bottom: 1rem;
+}
+
+#gain-money .container .left .left-content h4 .fa {
+  display: inline-block;
+  margin-left: 1rem;
+  color: #8c9aab;
+  font-size: 1.5rem;
+  background: #dbdfe5;
+}
+
+#gain-money .container .left .left-content h4 .fa.fa-line-chart {
+  background: #3c9231;
+  color: #ffffff !important;
+}
+
+#gain-money .container .left .left-content p {
+  font-family: "yekan regular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #000000;
+}
+
+#gain-money .container .left .left-content::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  background: #ccfcea;
+  filter: blur(400px);
+  width: 50vw;
+  height: 30vh;
+}
+
+#gain-money .container .left .left-content::after {
+  z-index: -2;
+  content: "";
+  position: absolute;
+  background: url("../../src/images/bg-list.jpg");
+  width: 100%;
+  height: 100%;
+  left: -20%;
+}
+
+@media screen and (min-width: 900px) {
+  #gain-money .container {
+    display: grid;
+    gap: 3rem;
+    justify-content: space-between;
+    gap: 5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  #gain-money .container .right .header {
+    text-align: right;
+  }
+  #gain-money .container .right .header .head {
+    text-align: right;
+    font-size: 3.8rem;
+  }
+  #gain-money .container .right .header .head-bottom {
+    font-size: 3.8rem;
+  }
+  #gain-money .container .left {
+    padding: 4rem 3rem;
+  }
+  #gain-money .container .left .left-content {
+    margin-top: 5rem;
+  }
+  #gain-money .container .left .left-content::after {
+    left: -60%;
+  }
+  #gain-money .container .left .left-content li {
+    width: 250px;
+    height: 100px;
+  }
+  #gain-money .container .left .left-content::before {
+    width: 80vw;
+    left: -50vw;
+    bottom: -50%;
+  }
+}
+
+#help {
+  padding: 5rem 1rem;
+}
+
+#help .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+#help .container.blogBG {
+  position: relative;
+}
+
+#help .container.blogBG::after {
+  z-index: -2;
+  width: 60%;
+  height: 150%;
+  content: "";
+  left: -20%;
+  position: absolute;
+  background: url(../../src/images/bg-list.jpg);
+}
+
+#help .container.blogBG::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -90%;
+  filter: blur(200px);
+  width: 100vw;
+  height: 100vh;
+  background: rgba(204, 252, 234, 0.4);
+}
+
+#help .container .mask {
+  padding: 3rem 1rem;
+}
+
+#help .container .mask * {
+  margin: 1rem 0;
+}
+
+#help .container .mask span {
+  font-family: "yekan regular";
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+}
+
+#help .container .mask span img {
+  margin-left: 0.3rem;
+}
+
+#help .container .mask .head {
+  font-family: "yekan";
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #242424;
+}
+
+#help .container .mask .badge {
+  background: rgba(0, 28, 114, 0.1);
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.7rem;
+  display: inline-block !important;
+}
+
+#help .container .mask p {
+  font-family: "yekan regular";
+  width: 80%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+}
+
+#help .container .mask .like {
+  color: #3c9231;
+  font-size: 1.2rem;
+}
+
+#help .container .mask .like img {
+  margin: 1rem 0;
+}
+
+#help .container .mask .btn {
+  display: block;
+  border: 1px solid #8c9aab;
+  border-radius: 1rem;
+  font-family: "yekan regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: center;
+  float: left;
+  margin-left: 2rem;
+  padding: 1rem 2rem;
+}
+
+#help .container .mask1 {
+  background: url("../../src/images/Mask1.jpg") no-repeat center center/cover;
+}
+
+#help .container .mask2 {
+  background: url("../../src/images/Mask2.jpg") no-repeat center center/cover;
+}
+
+#help .container .mask3 {
+  background: url("../../src/images/Mask3.jpg") no-repeat center center/cover;
+}
+
+#help .container .mask-photo {
+  border-radius: 3rem;
+  width: 230px;
+  margin: 2rem auto;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 1rem;
+  box-shadow: inset -10rem -10rem 10rem #242424;
+}
+
+#help .container .mask-photo * {
+  z-index: 10;
+}
+
+#help .container .mask-photo h4 {
+  color: #ffffff;
+  font-family: "yekan";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+}
+
+#help .container .mask-photo p {
+  font-family: "yekan";
+  font-size: 14px;
+  color: #8c9aab;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: right;
+}
+
+#help .container .mask-photo a {
+  font-family: "yekan";
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: right;
+  padding: 0.2rem 0.5rem;
+  background: #687281;
+  color: #ffffff;
+  width: 60px;
+  text-align: center;
+  border-radius: 0.3rem;
+  margin: 2rem;
+}
+
+@media screen and (min-width: 769px) {
+  #help .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #help .container {
+    grid-template-columns: 3fr 2fr 2fr 2fr;
+  }
+}
+
+#faq {
+  padding: 4rem 0;
+}
+
+#faq .container .header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#faq .container .header h4 {
+  font-family: "yekan";
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #687281;
+  margin: 2rem 0;
+}
+
+#faq .container .header p {
+  font-family: "yekan regular";
+  color: #242424;
+  margin-bottom: 2rem;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+#faq .container .accordion {
+  padding: 2rem 1rem;
+}
+
+#faq .container .accordion li {
+  background: #ffffff;
+  box-shadow: 0px -20.93px 67.2566px rgba(0, 0, 0, 0.03), 0px 54.4903px 39.3887px rgba(0, 0, 0, 0.0227778), 0px 32.3828px 21.4225px rgba(0, 0, 0, 0.0182222), 0px 16.8142px 10.9292px rgba(0, 0, 0, 0.015), 0px 6.85021px 5.48017px rgba(0, 0, 0, 0.0117778), 0px 1.55687px 2.64667px rgba(0, 0, 0, 0.00722222);
+  border-radius: 2rem;
+  margin: 2rem 1rem;
+  padding: 2rem 1rem;
+  height: 68px;
+}
+
+#faq .container .accordion li .link {
+  padding: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-family: "yekan bakh";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #8c9aab;
+  cursor: pointer;
+  height: 68px;
+}
+
+#faq .container .accordion li .link:hover {
+  color: #3c9231;
+}
+
+#faq .container .accordion li .submenu {
+  transition: all 0.5s;
+  padding: 2rem;
+  font-family: "yekan regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #000000;
+  opacity: 1;
+  transform: translateY(-100%);
+  visibility: hidden;
+  height: 0;
+}
+
+.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  height: auto;
+}
+
+.open-acc {
+  border-bottom: 1px solid #687281;
+}
+
+.height {
+  height: 300px !important;
+}
+
+@media screen and (min-width: 769px) {
+  .accordion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+#green-bg {
+  padding: 1rem 2rem !important;
+}
+
+#green-bg .container {
+  width: 100%;
+  height: 195px;
+  background: #3c9231;
+  border-radius: 2rem;
+}
+
+#footer .container {
+  display: grid;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer .container .top {
+  border-bottom: rgba(140, 154, 171, 0.7);
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  gap: 3rem;
+  align-items: center;
+}
+
+#footer .container .top .social,
+#footer .container .top .main-menu {
+  width: 100%;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#footer .container .top .social a,
+#footer .container .top .main-menu a {
+  font-family: "yekan bakh";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #687281;
+  text-align: right;
+}
+
+#footer .container .top .social a .fab,
+#footer .container .top .main-menu a .fab {
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  border: #8c9aab 1px solid;
+}
+
+#footer .container .bottom {
+  border-top: rgba(140, 154, 171, 0.4);
+  padding: 2rem 1rem;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer .container .bottom p {
+  text-align: center;
+  font-family: "yekan regular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #000000;
+}
+
+.content-footer {
+  border-bottom: rgba(140, 154, 171, 0.7);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.content-footer .right {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-footer .right p {
+  padding: 2rem 0;
+  font-family: "yekan regular";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: right;
+}
+
+.content-footer .left h4 {
+  font-family: "yekan bakh";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #242424;
+  margin-bottom: 2rem;
+}
+
+.content-footer .left-content {
+  gap: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.content-footer .left-content ul a {
+  font-family: "yekan bakh";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  color: #8c9aab;
+  margin: 1rem 0 !important;
+}
+
+@media screen and (min-width: 769px) {
+  #footer .container .top {
+    flex-direction: row;
+  }
+  #footer .container .top .social {
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  #footer .container .top .main-menu {
+    justify-content: space-between;
+  }
+  #footer .container .top .main-menu a {
+    font-size: 1.6rem;
+  }
+  #footer .container .content-footer {
+    grid-template-columns: 2fr 3fr;
+  }
+  #footer .container .content-footer .right p {
+    font-size: 1.6rem;
+  }
+  #footer .container .content-footer .left h4 {
+    font-size: 1.8rem;
+    margin-right: 1rem;
+  }
+  #footer .container .content-footer .left a {
+    font-size: 1.6rem;
+  }
+}

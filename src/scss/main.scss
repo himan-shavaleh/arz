@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "yekan regular";
+  src: url(../../src/fonts/Yekan_Bakh_EN_04_Regular.ttf);
+}
+@font-face {
+  font-family: "yekan";
+  src: url("../../src/fonts/Yekan_Bakh_EN_06_Bold.ttf");
+}
+@font-face {
+  font-family: "yekan bakh";
+  src: url("../../src/fonts/Yekan_Bakh_EN_05_Medium.ttf");
+}
+@import "config";
+@import "utilities";
+@import "navbar";
+@import "selectDropDown";
+@import "slides";
+@import "coinPrices";
+@import "aboutUs";
+@import "gainMoney";
+// @import "coinPrices";
+@import "help";
+@import "accordion";
+@import "footer";

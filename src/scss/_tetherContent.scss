@@ -1,0 +1,128 @@
+#subjects {
+  padding-top: 20rem !important;
+  .container {
+    display: flex;
+    flex-direction: column;
+    // grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    .subject {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 3rem 2rem;
+        .badge {
+          font-family: "yekan regular";
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 25px;
+          letter-spacing: 0em;
+          text-align: right;
+          color: $color-darker;
+        }
+        .head {
+          color: $color-dark;
+          font-family: Yekan Bakh;
+          font-size: 30px;
+          font-weight: 900;
+          letter-spacing: 0em;
+          text-align: center;
+          // margin: 0.5rem 0;
+          span {
+            position: relative;
+            color: $color-blue-dark;
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              z-index: -1;
+              width: 100%;
+              height: 1rem;
+              background: $color-blue-lighter;
+            }
+          }
+        }
+      }
+      img,
+      video {
+        width: 100%;
+        margin: auto;
+        height: 100%;
+        background: #ffffff;
+        box-shadow: 0px 14px 90px 22px rgba(228, 233, 242, 0.64);
+        border-radius: 30px;
+      }
+      a {
+        margin: 1rem 0;
+      }
+      p {
+        font-family: "yekan regular";
+        color: $color-darker;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 32px;
+        letter-spacing: 0em;
+        text-align: right;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  #subjects {
+    // padding: 40rem !important;
+    margin-top: 10rem;
+    .container {
+      // grid-template-columns: 1fr;
+      flex-direction: column;
+      .subject {
+        display: flex;
+        flex-direction: column;
+        div {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          text-align: center;
+          .head {
+            font-size: 2.5rem;
+          }
+          p {
+            font-family: "yekan regular";
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 32px;
+            letter-spacing: 0em;
+            text-align: right;
+          }
+        }
+        img,
+        video {
+          width: 80%;
+          height: 80%;
+        }
+      }
+    }
+  }
+}
+.btn-gray {
+  color: $color-light;
+  background: #a9adb5;
+  padding: 2rem 3.5rem;
+  &:hover {
+    color: $color-darker;
+    border: 1px solid #a9adb5;
+  }
+}
+.btn-succes {
+  padding: 2rem 3rem;
+}
